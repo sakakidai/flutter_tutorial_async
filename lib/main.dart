@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_async/async.dart';
+import 'package:flutter_tutorial_async/null_aware.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +38,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // Async().asynctest1();
     // Async().asynctest2();
     // Async().asynctest3();
-    Async().asynctest4();
+    // Async().asynctest4();
+
+    var instance = NullableInstance();
+    instance.nullExample1('hello!');
+    instance.nullExample1(null);
+    instance.nullExample2('hello!2');
+    instance.nullExample2(null);
+
+    // オブジェクトのnullチェックをしてからアクセス
+    print(instance.getNullable()?.toString());
   }
 
   @override
